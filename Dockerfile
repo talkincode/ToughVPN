@@ -69,7 +69,7 @@ EXPOSE 1813/udp
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 0700 /entrypoint.sh
 
-RUN echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.d/00-system.conf && sysctl -p
+RUN echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf && sysctl -p
 
 
 ENTRYPOINT ["/entrypoint.sh"]
