@@ -4,7 +4,7 @@ MAINTAINER jamiesun <jamiesun.net@gmail.com>
 
 RUN yum update -y
 RUN yum install -y pptpd iptables
-RUN yum install -y libffi-devel openssl openssl-devel git gcc  python-devel python-setuptools crontabs
+RUN yum install -y libffi-devel openssl openssl-devel git gcc  python-devel python-setuptools crontabs wget
 RUN yum install -y  mysql-devel MySQL-python
 RUN yum clean all
 
