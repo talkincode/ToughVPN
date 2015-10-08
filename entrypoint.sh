@@ -6,7 +6,7 @@ set -e
 #service rsyslog start
 
 # enable IP forwarding
-# sysctl -w net.ipv4.ip_forward=1
+sysctl -w net.ipv4.ip_forward=1
 
 # configure firewall
 iptables -t nat -A POSTROUTING -s 10.79.97.0/24 -o eth0 -j MASQUERADE
