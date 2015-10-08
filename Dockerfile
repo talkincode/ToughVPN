@@ -69,6 +69,8 @@ EXPOSE 1813/udp
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 0700 /entrypoint.sh
 
+RUN sudo echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["/usr/bin/toughrad","start"]
