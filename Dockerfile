@@ -31,12 +31,13 @@ COPY pptp/radiusclient/dictionary/dictionary /usr/local/etc/radiusclient/diction
 # setup toiughradius
 
 ADD toughradius/radiusd.conf /etc/radiusd.conf
-ADD toughradius/supervisord.conf /etc/supervisord.conf
 ADD toughradius/toughrad /usr/bin/toughrad
 RUN chmod +x /usr/bin/toughrad
 RUN mkdir -p /var/toughradius/data
 ADD toughradius/privkey.pem /var/toughradius/privkey.pem
 ADD toughradius/cacert.pem /var/toughradius/cacert.pem
+
+ADD supervisord.conf /etc/supervisord.conf
 
 
 RUN easy_install pip
