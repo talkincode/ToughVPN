@@ -20,7 +20,7 @@ lock
 nobsdcomp
 novj
 novjccomp
-nologfd
+#nologfd
 
 plugin /usr/lib64/pppd/2.4.5/radius.so
 plugin /usr/lib64/pppd/2.4.5/radattr.so
