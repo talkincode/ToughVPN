@@ -20,10 +20,10 @@ COPY pptp/ppp/pptpd-options /etc/ppp/pptpd-options
 
 # setup freeradius-client
 
-COPY pptp/radiusclient/radiusclient.conf /usr/local/etc/radiusclient/radiusclient.conf
-COPY pptp/radiusclient/servers /usr/local/etc/radiusclient/servers
-COPY pptp/radiusclient/dictionary/dictionary.microsoft /usr/local/etc/radiusclient/dictionary.microsoft
-COPY pptp/radiusclient/dictionary/dictionary /usr/local/etc/radiusclient/dictionary
+COPY radius/radiusclient.conf /usr/local/etc/radiusclient/radiusclient.conf
+COPY radius/servers /usr/local/etc/radiusclient/servers
+COPY radius/dictionary/dictionary.microsoft /usr/local/etc/radiusclient/dictionary.microsoft
+COPY radius/dictionary/dictionary /usr/local/etc/radiusclient/dictionary
 
 COPY supervisord.conf /etc/supervisord.conf
 
