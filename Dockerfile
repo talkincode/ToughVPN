@@ -3,15 +3,15 @@ MAINTAINER jamiesun <jamiesun.net@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y
-RUN apt-get install -y pptpd iptables wget gcc make
+RUN apt-get install -y pptpd iptables libfreeradius-client2 libfreeradius-client-dev
 RUN apt-get clean all
 
-RUN cd /usr/local/src &&\
-  wget ftp://ftp.freeradius.org/pub/freeradius/freeradius-client-1.1.7.tar.gz && \
-  tar xzvf freeradius-client-1.1.7.tar.gz && \
-  cd  /usr/local/src/freeradius-client-1.1.7 && \
-  ./configure --prefix=/usr/local && \
-  make && make install
+#RUN cd /usr/local/src &&\
+#  wget ftp://ftp.freeradius.org/pub/freeradius/freeradius-client-1.1.7.tar.gz && \
+#  tar xzvf freeradius-client-1.1.7.tar.gz && \
+#  cd  /usr/local/src/freeradius-client-1.1.7 && \
+#  ./configure --prefix=/usr/local && \
+#  make && make install
 
 # setup pptp
 
