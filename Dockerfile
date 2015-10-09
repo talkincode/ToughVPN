@@ -3,7 +3,7 @@ MAINTAINER jamiesun <jamiesun.net@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y
-RUN apt-get install -y pptpd iptables
+RUN apt-get install -y pptpd iptables wget gcc make
 RUN apt-get clean all
 
 RUN cd /usr/local/src &&\
