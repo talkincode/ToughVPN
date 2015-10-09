@@ -16,6 +16,7 @@ COPY pptp/ppp/pptpd-options /etc/ppp/pptpd-options
 COPY radius/radiusclient.conf /etc/radiusclient/radiusclient.conf
 COPY radius/servers /etc/radiusclient/servers
 COPY radius/dictionary/dictionary.microsoft /etc/radiusclient/dictionary.microsoft
+COPY radius/dictionary/dictionary.microsoft /etc/radiusclient/dictionary.pppd
 COPY radius/dictionary/dictionary /etc/radiusclient/dictionary
 
 COPY supervisord.conf /etc/supervisord.conf

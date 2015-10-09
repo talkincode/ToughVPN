@@ -8,6 +8,7 @@ set -e
 sed -i "s/RADIUS_ADDR RADIUS_SECRET/$RADIUS_ADDR $RADIUS_SECRET/g" /etc/radiusclient/servers
 sed -i "s/RADIUS_ADDR:RADIUS_AUTH_PORT/$RADIUS_ADDR:$RADIUS_AUTH_PORT/g" /etc/radiusclient/radiusclient.conf
 sed -i "s/RADIUS_ADDR:RADIUS_ACCT_PORT/$RADIUS_ADDR:$RADIUS_ACCT_PORT/g" /etc/radiusclient/radiusclient.conf
+echo "" > /etc/radiusclient/port-id-map
 
 # enable IP forwarding
 sysctl -w net.ipv4.ip_forward=1

@@ -1,0 +1,21 @@
+###### Attributes for traffic shaping
+# Cisco vendor
+VENDOR          Cisco   9       Cisco
+ATTRIBUTE       CiscoAVPair             1       string          Cisco
+
+#### Attributes for pppd
+# RFC 2869
+ATTRIBUTE       Acct-Interim-Interval   85      integer
+
+# Limit session traffic
+ATTRIBUTE       Session-Octets-Limit    227     integer
+
+# What to assume as limit - 0 in+out, 1 in, 2 out, 3 max(in,out)
+ATTRIBUTE       Octets-Direction        228     integer
+
+#       Octets-Direction
+VALUE           Octets-Direction        Sum                     0
+VALUE           Octets-Direction        Input                   1
+VALUE           Octets-Direction        Output                  2
+VALUE           Octets-Direction        MaxOveral               3
+VALUE           Octets-Direction        MaxSession              4
