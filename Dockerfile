@@ -3,7 +3,7 @@ MAINTAINER jamiesun <jamiesun.net@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y
-RUN apt-get install -y pptpd iptables libfreeradius-client2 libfreeradius-client-dev
+RUN apt-get install -y pptpd iptables libfreeradius-client2 libfreeradius-client-dev supervisor
 RUN apt-get clean all
 
 #RUN cd /usr/local/src &&\
@@ -25,9 +25,7 @@ COPY pptp/radiusclient/servers /usr/local/etc/radiusclient/servers
 COPY pptp/radiusclient/dictionary/dictionary.microsoft /usr/local/etc/radiusclient/dictionary.microsoft
 COPY pptp/radiusclient/dictionary/dictionary /usr/local/etc/radiusclient/dictionary
 
-
-RUN easy_install supervisor
-ADD supervisord.conf /etc/supervisord.conf
+COPY supervisord.conf /etc/supervisord.conf
 
 
 EXPOSE  1723
