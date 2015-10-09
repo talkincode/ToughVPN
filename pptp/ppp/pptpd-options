@@ -22,6 +22,6 @@ novj
 novjccomp
 #nologfd
 
-plugin /usr/lib64/pppd/2.4.5/radius.so
-plugin /usr/lib64/pppd/2.4.5/radattr.so
-radius-config-file /usr/local/etc/radiusclient/radiusclient.conf
+plugin /usr/lib/pppd/2.4.5/radius.so
+plugin /usr/lib/pppd/2.4.5/radattr.so
+radius-config-file /etc/radiusclient/radiusclient.conf
