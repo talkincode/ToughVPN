@@ -1,9 +1,9 @@
 name pptpd
 refuse-pap
-refuse-chap
+require-chap
 refuse-mschap
-require-mschap-v2
-require-mppe-128
+#require-mschap-v2
+#require-mppe-128
 
 # Network and Routing
 ms-dns 8.8.8.8

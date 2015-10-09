@@ -1,12 +1,12 @@
-FROM centos:centos7
+FROM ubuntu:latest
 MAINTAINER jamiesun <jamiesun.net@gmail.com>
 
-
-RUN yum update -y
-RUN yum install -y pptpd iptables
-RUN yum install -y libffi-devel openssl openssl-devel git gcc make  python-devel python-setuptools crontabs wget
-RUN yum install -y  mysql-devel MySQL-python
-RUN yum clean all
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update -y
+RUN apt-get install -y pptpd iptables
+RUN apt-get install -y libffi-dev openssl openssl-dev git gcc make  python-dev python-setuptools crontabs wget
+RUN apt-get install -y mysql-dev MySQL-python
+RUN apt-get clean all
 
 RUN cd /usr/local/src &&\
   wget ftp://ftp.freeradius.org/pub/freeradius/freeradius-client-1.1.7.tar.gz && \
