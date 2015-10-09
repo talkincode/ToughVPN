@@ -3,7 +3,7 @@
 set -e
 
 # start logging
-#service rsyslog start
+service rsyslog start
 
 sed -i "s/RADIUS_ADDR RADIUS_SECRET/$RADIUS_ADDR $RADIUS_SECRET/g" /etc/radiusclient/servers
 sed -i "s/RADIUS_ADDR:RADIUS_AUTH_PORT/$RADIUS_ADDR:$RADIUS_AUTH_PORT/g" /etc/radiusclient/radiusclient.conf
