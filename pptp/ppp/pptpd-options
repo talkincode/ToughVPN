@@ -12,8 +12,9 @@ proxyarp
 nodefaultroute
 
 # Logging
-# debug
-# dump
+debug
+dump
+logfile /var/log/pptpd.log
 
 # Miscellaneous
 lock
