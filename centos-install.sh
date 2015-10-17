@@ -2,7 +2,7 @@
 
 set -e
 
-RADIUS_ADDR=radius.toughstruct.com
+RADIUS_ADDR=127.0.0.1
 RADIUS_SECRET=testing123
 RADIUS_AUTH_PORT=1812
 RADIUS_ACCT_PORT=1813
@@ -44,8 +44,10 @@ sed -i "s/RADIUS_ADDR:RADIUS_ACCT_PORT/$RADIUS_ADDR:$RADIUS_ACCT_PORT/g" /etc/ra
 sysctl -w net.ipv4.ip_forward=1
 
 # configure firewall
-iptables -t nat -A POSTROUTING -s 10.79.97.0/24 -o eth0 -j MASQUERADE
-iptables -A FORWARD -s 10.79.97.0/24 -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j TCPMSS --set-mss 1356
+local_ip = "`ifconfig eth0 | grep "inet addr" | awk '{print $2}' |tr -d "addr:"`"
+iptables -t nat -A POSTROUTING -s 10.79.97.0/255.255.0.0 -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 10.79.97.0/255.255.0.0 -o eth0 -j SNAT --to-source ${local_ip}
+iptables -A FORWARD -s 10.79.97.0/255.255.0.0 -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j TCPMSS --set-mss 1356
 iptables-save
 
 exec "$@"
