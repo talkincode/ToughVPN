@@ -1,9 +1,9 @@
 name pptpd
 refuse-pap
-require-chap
+refuse-chap
 refuse-mschap
-#require-mschap-v2
-#require-mppe-128
+require-mschap-v2
+require-mppe-128
 
 # Network and Routing
 ms-dns 8.8.8.8
@@ -12,16 +12,16 @@ proxyarp
 nodefaultroute
 
 # Logging
-#debug
-#dump
-#logfile /var/log/pptpd.log
+debug
+dump
+logfile /var/log/pptpd.log
 
 # Miscellaneous
 lock
 nobsdcomp
 novj
 novjccomp
-nologfd
+#nologfd
 
 plugin /usr/lib/pppd/2.4.5/radius.so
 plugin /usr/lib/pppd/2.4.5/radattr.so

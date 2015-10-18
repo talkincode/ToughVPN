@@ -26,9 +26,7 @@
 #
 #	Following are the proper new names. Use these.
 #
-$INCLUDE dictionary.pppd
-$INCLUDE dictionary.merit
-$INCLUDE dictionary.microsoft
+
 
 
 ATTRIBUTE	User-Name		1	string
@@ -276,3 +274,7 @@ VALUE		Add-Port-To-IP-Address	Yes			1
 
 #VALUE		Server-Config		Password-Expiration	30
 #VALUE		Server-Config		Password-Warning	5
+
+INCLUDE /etc/radiusclient/dictionary.pppd
+INCLUDE /etc/radiusclient/dictionary.merit
+INCLUDE /etc/radiusclient/dictionary.microsoft
